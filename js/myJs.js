@@ -1,5 +1,7 @@
-const emptyParser = new DOMParser();
-const xmlStringCode = `
+gggggggggg()
+function gggggggggg() {
+    const emptyParser = new DOMParser();
+    const xmlStringCode = `
 <list>
     <student>
         <name lang="en">
@@ -18,28 +20,51 @@ const xmlStringCode = `
         <prof>driver</prof>
     </student>
 </list>`
-// console.log('xmlStringCode', xmlStringCode);
 
-const newXmlDOM = emptyParser.parseFromString(xmlStringCode, "text/xml");
-// console.log('newXmlDOM', newXmlDOM);
+    const newXmlDOM = emptyParser.parseFromString(xmlStringCode, "text/xml");
 
-const xmlDOMOne = newXmlDOM.querySelector("list");
-const studentDOMOne = xmlDOMOne.querySelector("student");
-const nameNode = xmlDOMOne.querySelector("name");
-const firstNode = xmlDOMOne.querySelector("first");
-const secondNode = xmlDOMOne.querySelector("second");
-const ageNode = xmlDOMOne.querySelector("age");
-const profNode = xmlDOMOne.querySelector("prof");
-const langAttrinyte = nameNode.getAttribute('lang');
+    const xmlDOMOne = newXmlDOM.querySelector("list"),
+        studentDOMOne = xmlDOMOne.querySelectorAll("student"),
+        nameIvan = studentDOMOne[0].querySelector("name"),
+        // const firstNode = newXmlDOM.getElementsByTagName("first")[0].textContent;
+        // const secondNode = newXmlDOM.getElementsByTagName("second")[0].textContent;
+        firstIvan = studentDOMOne[0].querySelector("first"),
+        secondIvan = studentDOMOne[0].querySelector("second"),
+        ageIvan = studentDOMOne[0].querySelector("age"),
+        profIvan = studentDOMOne[0].querySelector("prof"),
+        langAttrinyteIvan = nameIvan.getAttribute('lang')
 
-const resultJs = {
-    // list: xmlDOMOne,
-    // student: studentDOMOne,
-    // name: nameNode.textContent,
-    name: firstNode.textContent + " " + secondNode.textContent,
-    age: Number(ageNode.textContent),
-    prof: profNode.textContent,
-    lang: langAttrinyte,
-    // second: secondNode.textContent,
-};
-console.log('resultJs', resultJs);
+    const namePetr = studentDOMOne[1].querySelector("name"),
+        // const firstNode = newXmlDOM.getElementsByTagName("first")[0].textContent;
+        // const secondNode = newXmlDOM.getElementsByTagName("second")[0].textContent;
+        firstPetr = studentDOMOne[1].querySelector("first"),
+        secondPetr = studentDOMOne[1].querySelector("second"),
+        agePetr = studentDOMOne[1].querySelector("age"),
+        profPetr = studentDOMOne[1].querySelector("prof"),
+        langAttrinytePetr = namePetr.getAttribute('lang')
+
+        resultJsIvan = {
+            // list: xmlDOMOne,
+            // student: studentDOMOne,
+            // name: nameNode.textContent,
+            name: firstIvan.textContent + " " + secondIvan.textContent,
+            age: Number(ageIvan.textContent),
+            prof: profIvan.textContent,
+            lang: langAttrinyteIvan,
+            // secon
+            // d: secondNode.textContent,
+        }
+        resultJsPetr = {
+            // list: xmlDOMOne,
+            // student: studentDOMOne,
+            // name: nameNode.textContent,
+            name: firstPetr.textContent + " " + secondPetr.textContent,
+            age: Number(agePetr.textContent),
+            prof: profPetr.textContent,
+            lang: langAttrinytePetr,
+            // secon
+            // d: secondNode.textContent,
+        }
+        console.log('resultJsIvan', resultJsIvan);
+        console.log('resultJsPetr', resultJsPetr);
+}

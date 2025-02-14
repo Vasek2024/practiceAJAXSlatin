@@ -1,5 +1,7 @@
-gggggggggg()
-function gggggggggg() {
+/*
+// Задание 1
+fileXML()
+function fileXML() {
     const emptyParser = new DOMParser();
     const xmlStringCode = `
 <list>
@@ -43,28 +45,67 @@ function gggggggggg() {
         profPetr = studentDOMOne[1].querySelector("prof"),
         langAttrinytePetr = namePetr.getAttribute('lang')
 
-        resultJsIvan = {
-            // list: xmlDOMOne,
-            // student: studentDOMOne,
-            // name: nameNode.textContent,
-            name: firstIvan.textContent + " " + secondIvan.textContent,
-            age: Number(ageIvan.textContent),
-            prof: profIvan.textContent,
-            lang: langAttrinyteIvan,
-            // secon
-            // d: secondNode.textContent,
-        }
-        resultJsPetr = {
-            // list: xmlDOMOne,
-            // student: studentDOMOne,
-            // name: nameNode.textContent,
-            name: firstPetr.textContent + " " + secondPetr.textContent,
-            age: Number(agePetr.textContent),
-            prof: profPetr.textContent,
-            lang: langAttrinytePetr,
-            // secon
-            // d: secondNode.textContent,
-        }
-        console.log('resultJsIvan', resultJsIvan);
-        console.log('resultJsPetr', resultJsPetr);
+    resultJsIvan = {
+        // list: xmlDOMOne,
+        // student: studentDOMOne,
+        // name: nameNode.textContent,
+        name: firstIvan.textContent + " " + secondIvan.textContent,
+        age: Number(ageIvan.textContent),
+        prof: profIvan.textContent,
+        lang: langAttrinyteIvan,
+        // secon
+        // d: secondNode.textContent,
+    }
+    resultJsPetr = {
+        // list: xmlDOMOne,
+        // student: studentDOMOne,
+        // name: nameNode.textContent,
+        name: firstPetr.textContent + " " + secondPetr.textContent,
+        age: Number(agePetr.textContent),
+        prof: profPetr.textContent,
+        lang: langAttrinytePetr,
+        // secon
+        // d: secondNode.textContent,
+    }
+    console.log(resultJsIvan);
+    console.log(resultJsPetr);
 }
+
+
+// Задание 2
+fileJSON()
+function fileJSON() {
+    const JsonStringCode = `
+    {
+"list": [
+{
+    "name": "Petr",
+    "age": "20",
+    "prof": "mechanic"
+},
+{
+    "name": "Vova",
+    "age": "60",
+    "prof": "pilot"
+}
+]
+}`
+    const dataq = JSON.parse(JsonStringCode);
+    const list = dataq.list;
+    const petrResult = {
+        name: list[0].name,
+        age: Number(list[0].age),
+        prof: list[0].prof,
+    }
+    
+    const vovaResult = {
+        name: list[1].name,
+        age: Number(list[1].age),
+        prof: list[1].prof,
+    }
+console.log(vovaResult)
+console.log(petrResult)
+}
+*/
+
+// Задание 3

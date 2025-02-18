@@ -1,6 +1,5 @@
 /*
 // Задание 1
-fileXML()
 function fileXML() {
     const emptyParser = new DOMParser();
     const xmlStringCode = `
@@ -71,9 +70,17 @@ function fileXML() {
     console.log(resultJsPetr);
 }
 
+let taskOne = document.querySelector('.task__one')
 
+taskOne.addEventListener('click', function(){
+    fileXML()
+})
+*/
+
+
+
+/*
 // Задание 2
-fileJSON()
 function fileJSON() {
     const JsonStringCode = `
     {
@@ -106,6 +113,128 @@ function fileJSON() {
 console.log(vovaResult)
 console.log(petrResult)
 }
+
+let taskTwo = document.querySelector('.task__two')
+
+taskTwo.addEventListener('click', function(){
+    fileJSON()
+})
 */
 
+
+
+/*
 // Задание 3
+let formNumber = document.querySelector('.three__form-number'),
+    formData = document.querySelector('.three__form-data'),
+    formBtn = document.querySelector('.three__form-btn'),
+    formTitle = document.querySelector('.three__number-title')
+
+    // 
+formBtn.addEventListener('click', function(){ // клик покнопке
+    formDataValue = Number(formData.value)// берёмзачение value и преобразуем в число
+    if(formDataValue < 1 || formDataValue > 10){ // если меньше одного, но больше десяти, то
+        formTitle.textContent = 'Число вне диапазона от 1 до 10'
+    } else { // если ппадам , то
+        formTitle.textContent = `Вы ввели цифру ${formDataValue}`
+
+let xhr = new XMLHttpRequest();// создаем XMLHttpRequest
+// делаем GET запрос с введённым аргументом
+xhr.open('GET', `https://jsonplaceholder.typicode.com/photos?_limit=${formDataValue}`);
+
+// Добавляем обрабочик ответа сервера
+xhr.onload = function() {
+    if (xhr.status != 200) { // Если запрос выполнен успешно. Не 200, то
+        console.log('Статус ответа: ', xhr.status);
+    } else {
+        // Ответ мы получаем в формате JSON, поэтому его надо распарсить
+        console.log('Результат: ', JSON.parse(xhr.response));
+    }
+};
+
+// Добавляем обрабочик процесса загрузки
+xhr.onprogress = function(event) {
+    // Выведем прогресс загрузки
+    console.log(`Загружено ${event.loaded} из ${event.total}`)
+};
+// делаем запрос
+xhr.send();
+    }
+})
+*/
+
+
+
+/*
+// Задание 4
+let formNumber = document.querySelector('.four__form-number'),
+    dataOne = document.querySelector('.four__data-one'),
+    dataTwo = document.querySelector('.four__data-two'),
+    fourBtn = document.querySelector('.four__form-btn'),
+    numberTitle = document.querySelector('.four__number-title'),
+    numberImg = document.querySelector('.four__number-img')
+    
+    fourBtn.addEventListener('click', function(){ // клик покнопке
+        dataValueOne = Number(dataOne.value)// берём зачение value и преобразуем в число
+        dataValueTwo = Number(dataTwo.value)// берём зачение value и преобразуем в число
+        if(dataValueOne < 100 || dataValueOne > 300){ // если первый аргумент меньше ста, но больше трёхсот, то
+            numberTitle.textContent = 'Одно из чисел вне диапазона от 100 до 300'
+        } else if (dataValueTwo < 100 || dataValueTwo > 300){ // если второй аргумент меньше ста, но больше трёхсот, то
+            numberTitle.textContent = 'Одно из чисел вне диапазона от 100 до 300'
+        } else { // если ппадам , то
+            numberTitle.textContent = `Вы ввели цифры ${dataValueOne} и ${dataValueTwo} - это и есть размер картинки`
+    fetch(`https://dummyimage.com/${dataValueOne}x${dataValueTwo}`)
+    .then((response) => {
+        console.log('response', response);
+        const result = response.json();
+        console.log('result', result);
+        numberImg.className = "new-class"
+        numberImg.style.height = `${dataValueOne}px`
+        numberImg.style.width = `${dataValueTwo}px`
+      return result;
+    })
+    .then((data) => {
+      console.log(data);
+    })
+    .catch(() => { console.log('error') });
+    }
+    })
+    */
+
+
+
+    // Задание 5
+    let fiveNumber = document.querySelector('.five__form-number'),
+        dataFiveOne = document.querySelector('.five__data-one'),
+        dataFiveTwo = document.querySelector('.five__data-two'),
+        fiveBtn = document.querySelector('.five__form-btn'),
+        numberTitleFive = document.querySelector('.five__number-title'),
+        numberImgFive = document.querySelector('.five__number-img')
+
+        fiveBtn.addEventListener('click', function(){ // клик покнопке
+            dataValueFiveOne = Number(dataFiveOne.value)// берём зачение value и преобразуем в число
+            dataValueFiveTwo = Number(dataFiveTwo.value)// берём зачение value и преобразуем в число
+            if(dataValueFiveOne < 1 || dataValueFiveOne > 10){ // если первый аргумент меньше ста, но больше трёхсот, то
+                numberTitleFive.textContent = 'Номер страницы вне диапазона от 1 до 10'
+            } else if (dataValueFiveTwo < 1 || dataValueFiveTwo > 10){ // если второй аргумент меньше ста, но больше трёхсот, то
+                numberTitleFive.textContent = 'Лимит вне диапазона от 1 до 10'
+            } else if (dataValueFiveOne < 1 || dataValueFiveOne > 10 && dataValueFiveTwo < 1 || dataValueFiveTwo > 10){ // если второй аргумент меньше ста, но больше трёхсот, то
+                numberTitleFive.textContent = 'Номер страницы и лимит вне диапазона от 1 до 10'
+            } else { // если ппадам , то
+                numberTitleFive.textContent = `Вы ввели цифры ${dataValueFiveOne} и ${dataValueFiveTwo} - это и есть размер картинки`
+        fetch(`https://dummyimage.com/${dataValueFiveOne}x${dataValueFiveTwo}`)
+        .then((response) => {
+            console.log('response', response);
+            const result = response.json();
+            console.log('result', result);
+            numberImg.className = "new-class"
+            numberImg.style.height = `${dataValueFiveOne}px`
+            numberImg.style.width = `${dataValueFiveTwo}px`
+          return result;
+        })
+        .then((data) => {
+          console.log(data);
+        })
+        .catch(() => { console.log('error') });
+        }
+        })        
